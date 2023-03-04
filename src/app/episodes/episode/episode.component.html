@@ -1,0 +1,15 @@
+<section class="w-full h-full flex justify-center items-center px-4">
+  <div class="w-full md:w-3/4 h-96 bg-white">
+    <ng-container *ngIf="episode">
+      <div class="w-full h-full flex justify-center items-center">
+        <div>
+          <h2 class="text-5xl">{{ episode.name }}</h2>
+          <ul>
+            <li>Create at: {{ episode.created }}</li>
+            <li>episode: {{ episode.episode }}</li>
+          </ul>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</section>

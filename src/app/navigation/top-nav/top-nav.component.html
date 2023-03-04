@@ -1,0 +1,12 @@
+<nav class="w-full h-full bg-green-400 border-b-2 border-b-green-500">
+  <ul class="h-full flex items-center">
+    <li
+      *ngFor="let option of options"
+      [routerLink]="[option.path]"
+      routerLinkActive="router-link-active"
+      class="hover:bg-green-300 rounded cursor-pointer flex justify-center ml-3 p-2 font-bold"
+    >
+      {{ option.name }}
+    </li>
+  </ul>
+</nav>

@@ -1,0 +1,57 @@
+<section class="w-full h-full flex justify-center items-center">
+  <div class="w-full md:w-3/4 bg-white">
+    <div class="full">
+      <button class="p-3" (click)="eventCloseProfile()">
+        <i class="fa-sharp fa-solid fa-arrow-left text-lg"></i>
+      </button>
+    </div>
+
+    <section class="info-list">
+      <div class="flex border-b shadow-lg">
+        <figure class="p-1 bg-white m-2 card" *ngIf="data">
+          <img [src]="data.image" [alt]="data.name" />
+          <figcaption class="p-2 font-bold text-2xl">
+            {{ data.name }}
+          </figcaption>
+        </figure>
+        <div class="w-full text-sm md:text-base">
+          <ul>
+            <li>
+              <span>Status:</span>
+              <p>{{ data.status }}</p>
+            </li>
+            <li>
+              <span>Location:</span>
+              <p>{{ data.location.name }}</p>
+            </li>
+            <li>
+              <span>Origin:</span>
+              <p>{{ data.origin.name }}</p>
+            </li>
+            <li>
+              <span>Species:</span>
+              <p>{{ data.species }}</p>
+            </li>
+            <li>
+              <span>gender:</span>
+              <p>{{ data.gender }}</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="h-80 overflow-auto mt-3">
+        <ul>
+          <li
+            class="border-b p-3"
+            *ngFor="let episode of data.episode"
+            [routerLink]="['/episode',episode]"
+            routerLinkActive="router-link-active"
+          >
+            <span> Episode: {{ episode}}</span>
+            <i class="fa-solid fa-angle-right"></i>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </div>
+</section>

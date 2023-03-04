@@ -1,0 +1,41 @@
+<section class="w-full h-full flex justify-center items-center">
+  <div class="w-3/4 h-[calc(100%-50px)] overflow-auto">
+    <ng-container *ngIf="!showProfile">
+      <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5">
+        <ng-container *ngFor="let character of characters; let index = index">
+          <div class="flex justify-center">
+            <figure
+              class="p-1 bg-white m-2 card"
+              (click)="toggleProfile(index)"
+            >
+              <img [src]="character.image" [alt]="character.name" />
+              <figcaption class="p-2">{{ character.name }}</figcaption>
+            </figure>
+          </div>
+        </ng-container>
+      </div>
+      <footer class="w-full flex justify-center items-center">
+        <button
+          class="bg-green-400 text-white p-2 w-2/4"
+          (click)="getCharacters()"
+        >
+          See more
+        </button>
+      </footer>
+    </ng-container>
+
+    <ng-container *ngIf="showProfile">
+      <ng-container
+        *ngTemplateOutlet="
+          profile;
+          context: { $implicit: characters[indexSelected] }
+        "
+      >
+      </ng-container>
+    </ng-container>
+  </div>
+</section>
+
+<ng-template #profile let-data>
+  <app-profile [data]="data" (closeProfile)="toggleProfile(0)"></app-profile>
+</ng-template>
