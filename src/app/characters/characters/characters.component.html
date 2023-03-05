@@ -1,10 +1,11 @@
 <section class="w-full h-full flex justify-center items-center">
   <div
+    *ngIf="!showProfile"
     class="w-11/12 md:w-3/4 h-[calc(100%-50px)] overflow-y-auto"
     appInfinityScroll
     (onScrollDown)="scrollDown()"
   >
-    <ng-container *ngIf="!showProfile">
+    <ng-container>
       <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5">
         <ng-container *ngFor="let character of characters; let index = index">
           <div class="flex justify-center">
@@ -21,8 +22,10 @@
         </ng-container>
       </div>
     </ng-container>
+  </div>
 
-    <ng-container *ngIf="showProfile">
+  <div *ngIf="showProfile" class="w-11/12 md:w-3/4 h-[calc(100%-100px)] overflow-auto">
+    <ng-container>
       <ng-container
         *ngTemplateOutlet="
           profile;

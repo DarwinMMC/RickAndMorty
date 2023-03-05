@@ -1,18 +1,17 @@
 <section class="w-full h-full flex justify-center items-center">
-  <div class="w-full md:w-3/4 bg-white">
+  <div class="w-full md:w-3/4 h-full bg-white overflow-auto">
     <!-- Go -->
-    <div class="full">
+    <div class="w-full h-10">
       <button class="p-3" (click)="eventCloseProfile()">
         <i class="fa-sharp fa-solid fa-arrow-left text-lg"></i>
       </button>
     </div>
-
     <section class="info-list">
-      <div class="flex space-x-4 rounded-md overflow-hidden shadow-md ">
-        <figure class="card" *ngIf="data">
+      <div class="block md:flex space-x-4 rounded-md overflow-hidden shadow-md">
+        <figure class="card w-full flex md:block justify-center" *ngIf="data">
           <img [src]="data.image" [alt]="data.name" />
         </figure>
-        <div class="w-full md:text-base text-lg font-medium text-gray-600">
+        <div class="w-full text-sm md:text-lg font-medium text-gray-600">
           <span class="text-3xl font-bold">
             {{ data.name }}
           </span>
@@ -41,7 +40,7 @@
           </div>
         </div>
       </div>
-      <div class="h-64 overflow-auto mt-3">
+      <div class="h-64 overflow-auto">
         <ul>
           <li
             *ngFor="let episode of data.episode"
