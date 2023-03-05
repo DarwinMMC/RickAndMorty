@@ -1,27 +1,25 @@
 <section class="w-full h-full flex justify-center items-center">
-  <div class="w-3/4 h-[calc(100%-50px)] overflow-auto">
+  <div
+    class="w-11/12 md:w-3/4 h-[calc(100%-50px)] overflow-y-auto"
+    appInfinityScroll
+    (onScrollDown)="scrollDown()"
+  >
     <ng-container *ngIf="!showProfile">
       <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5">
         <ng-container *ngFor="let character of characters; let index = index">
           <div class="flex justify-center">
             <figure
-              class="p-1 bg-white m-2 card"
+              class="p-1 shadow-md m-2 card bg-white"
               (click)="toggleProfile(index)"
             >
-              <img [src]="character.image" [alt]="character.name" />
-              <figcaption class="p-2">{{ character.name }}</figcaption>
+              <img [src]="character.image" alt="image" />
+              <figcaption class="p-2 font-bold text-lg">
+                {{ character.name }}
+              </figcaption>
             </figure>
           </div>
         </ng-container>
       </div>
-      <footer class="w-full flex justify-center items-center">
-        <button
-          class="bg-green-400 text-white p-2 w-2/4"
-          (click)="getCharacters()"
-        >
-          See more
-        </button>
-      </footer>
     </ng-container>
 
     <ng-container *ngIf="showProfile">

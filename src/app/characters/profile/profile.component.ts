@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Character } from 'src/models';
 import { RouterModule } from '@angular/router';
+import { CharacterStatus } from 'src/models/enums/character-status';
 
 @Component({
   selector: 'app-profile[data]',
@@ -26,6 +27,9 @@ export class ProfileComponent {
   }
 
   @Output() closeProfile = new EventEmitter<void>();
+
+  /** Enum character status. */
+  characterStatus = CharacterStatus;
 
   /**
    * Emit event close profile to characters component.

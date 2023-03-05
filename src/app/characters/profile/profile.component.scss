@@ -1,6 +1,6 @@
-.info-list{
-   @apply w-full px-4;
-  li{
-    @apply  border-b p-3 flex justify-between;
+.info-list {
+  @apply w-full p-4;
+  li {
+    @apply border-b p-3 flex justify-between hover:bg-green-400 hover:text-white cursor-pointer;
   }
 }

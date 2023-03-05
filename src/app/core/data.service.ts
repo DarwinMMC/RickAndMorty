@@ -30,8 +30,6 @@ export class DataService {
    * @returns Episode data.
    */
   getEpisode(id: string): Observable<Episode> {
-    return this.http.get<Episode>(
-      `${environment.baseApiUrl}episode/${id}`
-    );
+    return this.http.get<Episode>(`${environment.baseApiUrl}episode/${id}`);
   }
 }
