@@ -1,9 +1,8 @@
 # RickAndMorty
 
 ![image](https://user-images.githubusercontent.com/56990125/222983395-0d72baad-69fc-4fe8-8a2f-775f1a34e02d.png)
+
 Firebase: https://rickandmorty-ecb79.web.app/
-
-
 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.1.
