@@ -6,12 +6,15 @@
         <i class="fa-sharp fa-solid fa-arrow-left text-lg"></i>
       </button>
     </div>
-    <section class="info-list">
+    <section class="md:p-4">
       <div class="block md:flex space-x-4 rounded-md overflow-hidden shadow-md">
-        <figure class="card w-full flex md:block justify-center" *ngIf="data">
-          <img [src]="data.image" [alt]="data.name" />
-        </figure>
-        <div class="w-full text-sm md:text-lg font-medium text-gray-600">
+        <div>
+          <figure class="card w-full flex md:block justify-center" *ngIf="data">
+            <img [src]="data.image" [alt]="data.name" />
+          </figure>
+        </div>
+
+        <div class="w-full p-2 text-sm md:text-lg font-medium text-gray-600">
           <span class="text-3xl font-bold">
             {{ data.name }}
           </span>
@@ -40,12 +43,11 @@
           </div>
         </div>
       </div>
-      <div class="h-64 overflow-auto">
+      <div class="h-96 mt-5 overflow-auto info-list">
         <ul>
           <li
             *ngFor="let episode of data.episode"
             [routerLink]="['/episode', episode]"
-            routerLinkActive="router-link-active"
           >
             <span> Episode: {{ episode }}</span>
             <i class="fa-solid fa-angle-right"></i>
